@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FS4L</title>
+  <%= stylesheet_link_tag    'bootstrap.min.css', media: 'all' %>
+  <%= stylesheet_link_tag    'flat-ui.css', media: 'all' %>
+  <%= stylesheet_link_tag    'home.css', media: 'all' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'flat-ui.min.js' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

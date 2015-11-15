@@ -1,0 +1,25 @@
+.table {
+    color: white;
+}
+
+thead {
+    color: #34495E;
+}
+
+.in {
+    background-color: #2ECC71;
+}
+.out {
+    background-color: #E74C3C;
+}
+
+td a {
+    color: white;
+    text-decoration: none;
+    -webkit-transition: .25s;
+    transition: .25s;
+}
+
+td a:hover {
+    color: #34495E;
+}

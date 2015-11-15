@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @raider.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @raider.email %>
+</p>
+
+<p>
+  <strong>Participating:</strong>
+  <%= @raider.participating %>
+</p>
+
+<p>
+  <strong>Auto:</strong>
+  <%= @raider.auto %>
+</p>
+
+<%= link_to 'Edit', edit_raider_path(@raider) %> |
+<%= link_to 'Back', raiders_path %>

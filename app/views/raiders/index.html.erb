@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="container">
+  <p id="notice"><%= notice %></p>
+  </div>
+  <div class="container">
+  <h1>FS4L</h1>
+  </div>
+  <div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+	<th>Name</th>
+	<th>Auto</th>
+	<th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @raiders.each do |raider| %>
+	<% if raider.participating -%>
+	<tr class="in">
+	<% else -%>
+	<tr class="out">
+	<% end %>
+          <td><%= raider.name %></td>
+          <td><%= raider.auto %></td>
+          <td><%= link_to 'Show', raider %></td>
+          <td><%= link_to 'Edit', edit_raider_path(raider) %></td>
+          <td><%= link_to 'Destroy', raider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+  <div class="container">
+  <br>
+
+  <%= link_to 'New Raider', new_raider_path, class: 'btn btn-embossed btn-default' %>
+  </div>
+</div>
