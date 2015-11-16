@@ -1,10 +1,13 @@
+require 'date'
+
 class RaidersController < ApplicationController
   before_action :set_raider, only: [:show, :edit, :update, :destroy]
 
   # GET /raiders
   # GET /raiders.json
   def index
-    @raiders = Raider.all
+    @raiders = Raider.all.order(:name)
+    @raidday = date_of_next "Thursday"
   end
 
   # GET /raiders/1
@@ -70,5 +73,11 @@ class RaidersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def raider_params
       params.require(:raider).permit(:name, :email, :participating, :auto)
+    end
+
+    def date_of_next(day)
+      date  = Date.parse(day)
+      delta = date > Date.today ? 0 : 7
+      date + delta
     end
 end
